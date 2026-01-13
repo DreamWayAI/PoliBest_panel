@@ -1,0 +1,190 @@
+/* PoliBest 911 - Mobile-First Industrial Dark Theme */
+
+/* Safe area for mobile devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #0F0F0F;
+  border-right: 1px solid #262626;
+}
+
+/* Mobile navigation */
+.mobile-nav {
+  background-color: #0F0F0F;
+  border-top: 1px solid #262626;
+}
+
+/* Navigation items */
+.nav-item {
+  @apply flex items-center gap-3 px-4 py-3 text-[#A3A3A3] uppercase text-sm font-bold tracking-wide transition-colors;
+}
+
+.nav-item:hover {
+  @apply text-[#B5331B] bg-white/5;
+}
+
+.nav-item.active {
+  @apply text-[#B5331B] bg-white/5 border-r-2 border-[#B5331B];
+}
+
+/* Cards - Mobile optimized */
+.card-industrial {
+  @apply bg-[#121212] border border-[#262626] p-4 md:p-6;
+}
+
+.card-industrial:hover {
+  @apply border-[#B5331B]/50;
+}
+
+/* Buttons - Touch friendly */
+.btn-primary {
+  @apply bg-[#B5331B] hover:bg-red-700 text-white font-bold uppercase tracking-wider px-4 py-3 transition-all;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  @apply bg-[#262626] hover:bg-neutral-800 text-[#A3A3A3] font-bold uppercase tracking-wider px-4 py-3 border border-[#262626] transition-all;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Inputs - Mobile touch friendly */
+.input-industrial {
+  @apply bg-[#171717] border border-[#262626] h-12 px-4 font-mono text-[#EDEDED] focus:ring-1 focus:ring-[#B5331B] focus:border-[#B5331B];
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* Tables - Mobile scroll */
+.table-industrial {
+  @apply w-full;
+}
+
+.table-industrial th {
+  @apply bg-[#1F1F1F] text-[#A3A3A3] uppercase text-xs font-bold tracking-wider px-3 py-2 md:px-4 md:py-3 text-left whitespace-nowrap;
+}
+
+.table-industrial td {
+  @apply px-3 py-2 md:px-4 md:py-3 text-[#EDEDED] border-b border-[#262626] text-sm;
+}
+
+.table-industrial tr:hover td {
+  @apply bg-white/5;
+}
+
+/* Stats cards */
+.stat-card {
+  @apply bg-[#121212] border border-[#262626] p-4 md:p-6;
+}
+
+.stat-value {
+  @apply text-2xl md:text-3xl font-bold text-[#EDEDED] font-mono;
+}
+
+.stat-label {
+  @apply text-xs md:text-sm text-[#A3A3A3] uppercase tracking-wider mt-1 md:mt-2;
+}
+
+/* Page header */
+.page-header {
+  @apply text-xl md:text-3xl font-bold uppercase tracking-tight text-[#EDEDED] mb-4 md:mb-8;
+}
+
+/* Video card */
+.video-card {
+  @apply bg-[#121212] border border-[#262626] overflow-hidden;
+}
+
+.video-card:hover {
+  @apply border-[#B5331B]/50;
+}
+
+/* Knowledge base */
+.kb-category {
+  @apply bg-[#121212] border border-[#262626] p-3 md:p-4 cursor-pointer transition-colors;
+}
+
+.kb-category:hover {
+  @apply border-[#B5331B]/50;
+}
+
+.kb-article {
+  @apply p-3 md:p-4 border-b border-[#262626] hover:bg-white/5 cursor-pointer transition-colors;
+}
+
+/* Service card */
+.service-card {
+  @apply bg-[#121212] border border-[#262626] p-4 md:p-6 text-center;
+}
+
+.service-card:hover {
+  @apply border-[#B5331B]/50;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Disable hover effects on mobile */
+  .card-industrial:hover,
+  .video-card:hover,
+  .kb-category:hover,
+  .service-card:hover {
+    border-color: #262626;
+  }
+  
+  /* Larger touch targets */
+  button, a, input, select {
+    min-height: 44px;
+  }
+  
+  /* Better text readability */
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Disable pull-to-refresh */
+  html {
+    overscroll-behavior: none;
+  }
+}
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar on mobile but keep scroll */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation for active state */
+@keyframes press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+.press-animation:active {
+  animation: press 0.15s ease-out;
+}
