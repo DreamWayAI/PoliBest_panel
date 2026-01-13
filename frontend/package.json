@@ -22,8 +22,27 @@
     "test": "craco test",
     "eject": "react-scripts eject"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "overrides": {
     "ajv": "6.12.6",
-    "ajv-keywords": "3.5.2"
+    "ajv-keywords": "3.5.2",
+    "ajv-formats": "1.5.1"
   }
 }
